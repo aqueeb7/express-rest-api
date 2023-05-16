@@ -55,7 +55,7 @@ exports.login = async (req, res) => {
   }
   try {
     let userData = await user.findOne({ email: req.body.email });
-    // console.log(userData);
+
     if (userData) {
       if (bcrypt.compareSync(req.body.password, userData.password)) {
         let jwt_secret = process.env.JWT_SECRET || "mysecret";
@@ -87,7 +87,6 @@ exports.login = async (req, res) => {
       });
     }
   } catch (error) {
-    // console.log("test");
     return res.status(400).send({
       message: error.message,
       data: error,

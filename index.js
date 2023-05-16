@@ -26,6 +26,8 @@ const http = require('http');
 const server = http.Server(app);
 const port = process.env.PORT || 3000;
 
+
+require('./helpers/extend-node-input-validator');
 require('./routes/index')(app);
 
 

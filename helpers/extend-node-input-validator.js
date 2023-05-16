@@ -26,15 +26,3 @@ niv.extend('unique', async ({ value, args }) => {
 
   return true;
 });
-
-// example usage of upper extended rule
-
-new niv.Validator({
-  email: 'required|email|unique:User,email'
-}, inputs);
-
-// in case to ignore specific id
-
-new niv.Validator({
-  email: 'required|email|unique:User,email,5c2f29e9cefa7718a54f8ff1'
-}, inputs);

@@ -7,7 +7,7 @@ exports.register = async (req, res) => {
   const v = new Validator(req.body, {
     first_name: "required|string|minLength:2|maxLength:100",
     last_name: "required|string|minLength:2|maxLength:100",
-    email: "required|email",
+    email: "required|email|unique:User,email",
     password: "required",
   })
 
